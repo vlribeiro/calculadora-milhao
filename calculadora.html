@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <script type="text/javascript" src="./js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/vendor/foundation.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="./css/vendor/reset.css">
+    <link rel="stylesheet" href="./css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="./css/site.css">
+
+    <title>Calculadora do milhão</title>
+  </head>
+  <body>
+    <header class="row">
+      <div class="column">
+        <h1 class="text-center">Simulador do Milhão</h1>
+      </div>
+    </header>
+
+    <section class="row">
+      <div class="column material-input">
+        <label class="material-input__label">Investimento inicial</label>
+        <input class="material-input__input" type="number" min="0" step="0.01" placeholder="0,00" />
+      </div>
+      <div class="column material-input">
+        <label class="material-input__label">Investimento mensal</label>
+        <input class="material-input__input" type="number" min="0" step="0.01" placeholder="0,00" />
+      </div>
+      <div class="column material-input">
+        <label class="material-input__label">Renda desejada</label>
+        <input class="material-input__input" type="number" min="0" step="0.01" placeholder="0,00" />
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="row">
+      <div class="column large-12 medium-12 small-12">
+        <p class="output-message">
+          Faltam apenas <span class="output-message__months">0</span> anos em uma carteira conservadora para atingir o seu primeiro milhão!
+        </p>
+      </div>
+      <div class="column large-12 medium-12 small-12">
+        <p class="output-message">
+          Faltam apenas <span class="output-message__months">0</span> anos em uma carteira moderada para atingir o seu primeiro milhão!
+        </p>
+      </div>
+      <div class="column large-12 medium-12 small-12">
+        <p class="output-message">
+          Faltam apenas <span class="output-message__months">0</span> anos em uma carteira conservadora para chegar ao seu objetivo!
+        </p>
+      </div>
+      <div class="column large-12 medium-12 small-12">
+        <p class="output-message">
+          Faltam apenas <span class="output-message__months">0</span> anos em uma carteira moderada para chegar ao seu objetivo!
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="row">
+      <div class="column text-center">
+        <p class="communication-text">Agora que você tem uma ideia, vamos colocar isso em prática? Você só vai chegar lá se começar. Vai precisar de planejamento, responsabilidade, perseverança. Mas é possível! E, claro, vai precisar de uma ajuda fundamental: a de um assessor de investimentos, pra te ajudar a entender quais alternativas de investimentos mais se adequam ao seu perfil, respeitando sua capacidade de aceitar riscos, sua necessidade de liquidez e as condições que o momento oferece. Vem comigo!</p>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="column text-center">
+        <a href="mailto:cofrinho@miguelmilanez.com.br">cofrinho@miguelmilanez.com.br</a>
+      </div>
+      <div class="column text-center">
+        <a href="http://miguelmilanez.com.br">http://miguelmilanez.com.br</a>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="column text-center">
+        <p class="footer">OBS: todos os cálculos são feitos levando em consideração a inflação. Isso significa que o milhão de reais e a renda mensal desejada são referentes ao poder de compra atual, mas também que é necessário corrigir os aportes mensais pelo IPCA. A carteira conservadora tem rentabilidade real de 4,5% ao ano, e a moderada, de 6,0% ao ano, valores compatíveis com o mercado hoje, mas que podem não ser nos próximos anos, principalmente em um prazo muito longo. Essa planilha é um exercício, uma simulação, de forma alguma uma promessa de retorno. Não deixe de fazer seu teste de perfil de investidor e montar uma carteira realmente adequada às suas necessidades.</p>
+      </div>
+    </section>
+
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

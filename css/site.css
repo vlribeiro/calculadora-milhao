@@ -1,0 +1,58 @@
+body {
+  background-color: #805281;
+  color: #fff;
+}
+
+h1 {
+  color: #64C5AE;
+  text-transform: uppercase;
+}
+
+a {
+  color: #64C5AE;
+}
+
+.material-input {
+  position: relative;
+}
+
+.material-input__label {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.material-input__input, .material-input__input:focus {
+  background-color: transparent;
+  border-top: .2rem solid #64C5AE;
+  border-bottom: .2rem solid #64C5AE;
+  border-left: none;
+  border-right: none;
+  font-size: 1.6rem;
+  color: #fff;
+  min-height: 4rem;
+}
+
+.material-input__input:focus ~ .material-input__label {
+  font-size: 2rem !important;
+}
+
+.output-message {
+  font-size: 1.2rem;
+}
+
+.output-message__months {
+  font-size: 1.4rem;
+  display: inline-block;
+  width: 6rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.communication-text {
+  color: #64C5AE;
+}
+
+.footer {
+  font-size: .8rem;
+  margin-top: 4rem;
+}
