@@ -1,9 +1,9 @@
 body {
-  background-color: #805281;
-  color: #fff;
+  color: #333;
+  font-family: 'Lato', sans-serif;
 }
 
-h1 {
+.calc-title {
   color: #64C5AE;
   text-transform: uppercase;
 }
@@ -12,12 +12,16 @@ a {
   color: #64C5AE;
 }
 
+hr {
+  border-bottom-color: #805281;
+}
+
 .material-input {
   position: relative;
 }
 
 .material-input__label {
-  color: #fff;
+  color: #805281;
   font-size: 1.4rem;
 }
 
@@ -28,7 +32,7 @@ a {
   border-left: none;
   border-right: none;
   font-size: 1.6rem;
-  color: #fff;
+  color: #805281;
   min-height: 4rem;
 }
 
@@ -46,10 +50,7 @@ a {
   width: 6rem;
   text-align: center;
   font-weight: bold;
-}
-
-.communication-text {
-  color: #64C5AE;
+  color: #805281;
 }
 
 .footer {
