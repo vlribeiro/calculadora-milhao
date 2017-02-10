@@ -4,6 +4,7 @@ body {
 }
 
 a { color: #64C5AE; }
+a:hover { color: #805281; }
 hr { border-bottom-color: #805281; }
 .text-center { text-align: center; }
 
@@ -36,7 +37,7 @@ hr { border-bottom-color: #805281; }
   padding: 1rem 0;
 }
 
-.calc-controls__input, .calc-controls__input:focus {
+.calc-controls__input {
   background-color: transparent;
   border-top: .2rem solid #64C5AE;
   border-bottom: .2rem solid #64C5AE;
@@ -48,18 +49,49 @@ hr { border-bottom-color: #805281; }
   width: 100%;
 }
 
+.calc-controls__input:focus {
+  outline: none;
+  box-shadow: 0 0 .4rem rgba(0,0,0,.3);
+}
+
 .calc-messages .calc-messages__message {
   font-size: 1rem;
   padding: .625rem 0;
   line-height: 1.4rem;
+  text-align: center;
+  width: 100%;
 }
 
 .calc-messages .calc-messages__months {
   font-size: 1.4rem;
   display: inline-block;
-  width: 6rem;
+  min-width: 5rem;
   font-weight: bold;
   color: #805281;
+  background-color: #64C5AE;
+  border-radius: .2rem;
+  padding: .4rem 0;
+  box-shadow: 0 0 .4rem rgba(0,0,0,.3);
+  cursor: default;
+  animation: bounce-out .3s 1 forwards ease-in-out;
+}
+
+.calc-messages .calc-messages__months:hover {
+  animation: bounce-in .3s 1 forwards ease-in-out;
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(1); }
+  20% { transform: scale(.8); }
+  80% { transform: scale(1.4); }
+  100% { transform: scale(1.2); }
+}
+
+@keyframes bounce-out {
+  0% { transform: scale(1.2); }
+  20% { transform: scale(1.4); }
+  80% { transform: scale(.8); }
+  100% { transform: scale(1); }
 }
 
 .calc-communication {
@@ -74,6 +106,8 @@ hr { border-bottom-color: #805281; }
 
 .calc-links .calc-links__link {
   padding: .625rem 0;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .calc-footer {
@@ -81,4 +115,29 @@ hr { border-bottom-color: #805281; }
   line-height: 1.4rem;
   color: #805281;
   margin-top: 4rem;
+}
+
+@media screen and (min-width: 40em) {
+  .calc-controls {
+    justify-content: space-around;
+  }
+
+  .calc-controls .calc-controls__item {
+    width: 28%;
+  }
+
+  .calc-messages .calc-messages__message {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .calc-messages .calc-messages__message {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .calc-messages .calc-messages__months {
+    font-size: 1.6rem;
+  }
 }
