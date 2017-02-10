@@ -5,7 +5,7 @@ body {
 
 a { color: #64C5AE; }
 a:hover { color: #805281; }
-hr { border-bottom-color: #805281; }
+.calc-break-line { border-bottom-color: #805281; max-width: 62.5rem; margin-left: auto; margin-right: auto; }
 .text-center { text-align: center; }
 
 .calc-title {
