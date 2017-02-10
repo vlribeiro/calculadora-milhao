@@ -6,6 +6,7 @@ var Milhao = (function() {
     }
 
     var Controls = (function() {
+        var calcControls = '.calc-controls';
         var materialInputs = '.calc-controls__input';
 
         var initialValue = '#initial-value',
@@ -35,6 +36,19 @@ var Milhao = (function() {
         }
 
         var init = function() {
+            $(calcControls).append( '<label class="calc-controls__item">' +
+                                        '<span class="calc-controls__label">Investimento inicial</span>' +
+                                        '<input id="initial-value" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
+                                    '</label>' +
+                                    '<label class="calc-controls__item">' +
+                                        '<span class="calc-controls__label">Investimento mensal</span>' +
+                                        '<input id="cash-flow" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
+                                    '</label>' +
+                                    '<label class="calc-controls__item">' +
+                                        '<span class="calc-controls__label">Renda desejada</span>' +
+                                        '<input id="desired-income" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
+                                    '</label>');
+
             $(materialInputs).on('change', changeInputs);
         }
 
