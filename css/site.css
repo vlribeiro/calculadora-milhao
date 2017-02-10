@@ -3,57 +3,82 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+a { color: #64C5AE; }
+hr { border-bottom-color: #805281; }
+.text-center { text-align: center; }
+
 .calc-title {
   color: #64C5AE;
   text-transform: uppercase;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 1rem 0;
 }
 
-a {
-  color: #64C5AE;
+.calc-row {
+  max-width: 62.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: .625rem;
 }
 
-hr {
-  border-bottom-color: #805281;
+.calc-controls .calc-controls__item {
+  width: 100%;
 }
 
-.material-input {
-  position: relative;
-}
-
-.material-input__label {
+.calc-controls__label {
   color: #805281;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  display: block;
+  padding: 1rem 0;
 }
 
-.material-input__input, .material-input__input:focus {
+.calc-controls__input, .calc-controls__input:focus {
   background-color: transparent;
   border-top: .2rem solid #64C5AE;
   border-bottom: .2rem solid #64C5AE;
   border-left: none;
   border-right: none;
-  font-size: 1.6rem;
-  color: #805281;
-  min-height: 4rem;
-}
-
-.material-input__input:focus ~ .material-input__label {
-  font-size: 2rem !important;
-}
-
-.output-message {
   font-size: 1.2rem;
+  color: #805281;
+  min-height: 3rem;
+  width: 100%;
 }
 
-.output-message__months {
+.calc-messages .calc-messages__message {
+  font-size: 1rem;
+  padding: .625rem 0;
+  line-height: 1.4rem;
+}
+
+.calc-messages .calc-messages__months {
   font-size: 1.4rem;
   display: inline-block;
   width: 6rem;
-  text-align: center;
   font-weight: bold;
   color: #805281;
 }
 
-.footer {
+.calc-communication {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.calc-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-links .calc-links__link {
+  padding: .625rem 0;
+}
+
+.calc-footer {
   font-size: .8rem;
+  line-height: 1.4rem;
+  color: #805281;
   margin-top: 4rem;
 }

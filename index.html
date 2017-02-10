@@ -9,6 +9,7 @@
     <script type="text/javascript" src="./js/main.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="./css/vendor/reset.css">
     <link rel="stylesheet" href="./css/site.css">
 
     <link rel="icon" type="image/png" href="icon.png" />
@@ -19,71 +20,51 @@
 
     <h2 class="calc-title">Simulador do Milhão</h2>
 
-    <section class="row medium-unstack">
-      <div class="column material-input">
-        <label for="initial-value" class="material-input__label">Investimento inicial</label>
-        <input id="initial-value" class="material-input__input" type="number" min="0" step="0.01" placeholder="0,00" />
-      </div>
-      <div class="column material-input">
-        <label for="cash-flow" class="material-input__label">Investimento mensal</label>
-        <input id="cash-flow" class="material-input__input" type="number" min="0" step="0.01" placeholder="0,00" />
-      </div>
-      <div class="column material-input">
-        <label for="desired-income" class="material-input__label">Renda desejada</label>
-        <input id="desired-income" class="material-input__input" type="number" min="0" step="0.01" placeholder="0,00" />
-      </div>
+    <section class="calc-controls calc-row">
+        <label class="calc-controls__item">
+          <span class="calc-controls__label">Investimento inicial</span>
+          <input id="initial-value" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />
+        </label>
+      <label class="calc-controls__item">
+        <span class="calc-controls__label">Investimento mensal</span>
+        <input id="cash-flow" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />
+      </label>
+      <label class="calc-controls__item">
+        <span class="calc-controls__label">Renda desejada</span>
+        <input id="desired-income" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />
+      </label>
     </section>
 
     <hr />
 
-    <section class="row">
-      <div class="column large-12 medium-12 small-12">
-        <p class="output-message">
-          Faltam apenas <span id="conservative-amount-years" class="output-message__months">0</span> anos em uma carteira conservadora para atingir o seu primeiro milhão!
-        </p>
-      </div>
-      <div class="column large-12 medium-12 small-12">
-        <p class="output-message">
-          Faltam apenas <span id="moderate-amount-years" class="output-message__months">0</span> anos em uma carteira moderada para atingir o seu primeiro milhão!
-        </p>
-      </div>
-      <div class="column large-12 medium-12 small-12">
-        <p class="output-message">
-          Faltam apenas <span id="conservative-objective-years" class="output-message__months">0</span> anos em uma carteira conservadora para chegar ao seu objetivo!
-        </p>
-      </div>
-      <div class="column large-12 medium-12 small-12">
-        <p class="output-message">
-          Faltam apenas <span id="moderate-objective-years" class="output-message__months">0</span> anos em uma carteira moderada para chegar ao seu objetivo!
-        </p>
-      </div>
+    <section class="calc-row calc-messages">
+      <p class="calc-messages__message text-center">
+        Faltam apenas <span id="conservative-amount-years" class="calc-messages__months text-center">0</span> anos em uma carteira conservadora para atingir o seu primeiro milhão!
+      </p>
+      <p class="calc-messages__message text-center">
+        Faltam apenas <span id="moderate-amount-years" class="calc-messages__months text-center">0</span> anos em uma carteira moderada para atingir o seu primeiro milhão!
+      </p>
+      <p class="calc-messages__message text-center">
+        Faltam apenas <span id="conservative-objective-years" class="calc-messages__months text-center">0</span> anos em uma carteira conservadora para chegar ao seu objetivo!
+      </p>
+      <p class="calc-messages__message text-center">
+        Faltam apenas <span id="moderate-objective-years" class="calc-messages__months text-center">0</span> anos em uma carteira moderada para chegar ao seu objetivo!
+      </p>
     </section>
 
     <hr />
 
-    <section class="row">
-      <div class="column text-center">
-        <p class="communication-text">Agora que você tem uma ideia, vamos colocar isso em prática? Você só vai chegar lá se começar. Vai precisar de planejamento, responsabilidade, perseverança. Mas é possível! E, claro, vai precisar de uma ajuda fundamental: a de um assessor de investimentos, pra te ajudar a entender quais alternativas de investimentos mais se adequam ao seu perfil, respeitando sua capacidade de aceitar riscos, sua necessidade de liquidez e as condições que o momento oferece. Vem comigo!</p>
-      </div>
+    <section class="calc-row calc-communication">
+      <p class="calc-communication__text text-center">Agora que você tem uma ideia, vamos colocar isso em prática? Você só vai chegar lá se começar. Vai precisar de planejamento, responsabilidade, perseverança. Mas é possível! E, claro, vai precisar de uma ajuda fundamental: a de um assessor de investimentos, pra te ajudar a entender quais alternativas de investimentos mais se adequam ao seu perfil, respeitando sua capacidade de aceitar riscos, sua necessidade de liquidez e as condições que o momento oferece. Vem comigo!</p>
     </section>
 
-    <section class="row">
-      <div class="column text-center">
-        <a href="mailto:cofrinho@miguelmilanez.com.br">cofrinho@miguelmilanez.com.br</a>
-      </div>
-      <div class="column text-center">
-        <a href="http://miguelmilanez.com.br">http://miguelmilanez.com.br</a>
-      </div>
+    <section class="calc-row calc-links">
+      <a class="calc-links__link text-center" href="mailto:cofrinho@miguelmilanez.com.br">cofrinho@miguelmilanez.com.br</a>
+      <a class="calc-links__link text-center" href="https://www.xpi.com.br/aai/#/passo/1?assessor=A65658">Abra sua conta</a>
     </section>
 
-    <section class="row">
-      <div class="column text-center">
-        <p class="footer">OBS: todos os cálculos são feitos levando em consideração a inflação. Isso significa que o milhão de reais e a renda mensal desejada são referentes ao poder de compra atual, mas também que é necessário corrigir os aportes mensais pelo IPCA. A carteira conservadora tem rentabilidade real de 4,5% ao ano, e a moderada, de 6,0% ao ano, valores compatíveis com o mercado hoje, mas que podem não ser nos próximos anos, principalmente em um prazo muito longo. Essa planilha é um exercício, uma simulação, de forma alguma uma promessa de retorno. Não deixe de fazer seu teste de perfil de investidor e montar uma carteira realmente adequada às suas necessidades.</p>
-      </div>
-    </section>
-
-    <script>
-      $(document).foundation();
-    </script>
+    <footer class="calc-row calc-footer">
+      <p class="calc-footer__text text-center">OBS: todos os cálculos são feitos levando em consideração a inflação. Isso significa que o milhão de reais e a renda mensal desejada são referentes ao poder de compra atual, mas também que é necessário corrigir os aportes mensais pelo IPCA. A carteira conservadora tem rentabilidade real de 4,5% ao ano, e a moderada, de 6,0% ao ano, valores compatíveis com o mercado hoje, mas que podem não ser nos próximos anos, principalmente em um prazo muito longo. Essa planilha é um exercício, uma simulação, de forma alguma uma promessa de retorno. Não deixe de fazer seu teste de perfil de investidor e montar uma carteira realmente adequada às suas necessidades.</p>
+    </footer>
   </body>
 </html>

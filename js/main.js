@@ -6,7 +6,7 @@ var Milhao = (function() {
     }
 
     var Controls = (function() {
-        var materialInputs = '.material-input__input';
+        var materialInputs = '.calc-controls__input';
 
         var initialValue = '#initial-value',
             cashFlow = '#cash-flow',
