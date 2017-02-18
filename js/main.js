@@ -22,41 +22,43 @@ var Milhao = (function() {
             var results = Calc.futureValue(get());
 
             if (results === null) {
-                $(conservativeAmountYears).text('0');
-                $(moderateAmountYears).text('0');
-                $(conservativeObjectiveYears).text('0');
-                $(moderateObjectiveYears).text('0');
+                document.querySelector(conservativeAmountYears).innerHTML = '0';
+                document.querySelector(moderateAmountYears).innerHTML = '0';
+                document.querySelector(conservativeObjectiveYears).innerHTML = '0';
+                document.querySelector(moderateObjectiveYears).innerHTML = '0';
             }
             else {
-                $(conservativeAmountYears).text(Math.ceil(results.conservativeAmountMonths / 12));
-                $(moderateAmountYears).text(Math.ceil(results.moderateAmountMonths / 12));
-                $(conservativeObjectiveYears).text(Math.ceil(results.conservativeObjectiveMonths / 12));
-                $(moderateObjectiveYears).text(Math.ceil(results.moderateObjectiveMonths / 12));
+                document.querySelector(conservativeAmountYears).innerHTML = Math.ceil(results.conservativeAmountMonths / 12);
+                document.querySelector(moderateAmountYears).innerHTML = Math.ceil(results.moderateAmountMonths / 12);
+                document.querySelector(conservativeObjectiveYears).innerHTML = Math.ceil(results.conservativeObjectiveMonths / 12);
+                document.querySelector(moderateObjectiveYears).innerHTML = Math.ceil(results.moderateObjectiveMonths / 12);
             }
         }
 
         var init = function() {
-            $(calcControls).append( '<label class="calc-controls__item">' +
-                                        '<span class="calc-controls__label">Investimento inicial</span>' +
-                                        '<input id="initial-value" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
-                                    '</label>' +
-                                    '<label class="calc-controls__item">' +
-                                        '<span class="calc-controls__label">Investimento mensal</span>' +
-                                        '<input id="cash-flow" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
-                                    '</label>' +
-                                    '<label class="calc-controls__item">' +
-                                        '<span class="calc-controls__label">Renda desejada</span>' +
-                                        '<input id="desired-income" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
-                                    '</label>');
+            document.querySelector(calcControls).innerHTML =    '<label class="calc-controls__item">' +
+                                                                    '<span class="calc-controls__label">Investimento inicial</span>' +
+                                                                    '<input id="initial-value" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
+                                                                '</label>' +
+                                                                '<label class="calc-controls__item">' +
+                                                                    '<span class="calc-controls__label">Investimento mensal</span>' +
+                                                                    '<input id="cash-flow" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
+                                                                '</label>' +
+                                                                '<label class="calc-controls__item">' +
+                                                                    '<span class="calc-controls__label">Renda desejada</span>' +
+                                                                    '<input id="desired-income" class="calc-controls__input text-center" type="number" min="0" step="1" placeholder="0,00" />' +
+                                                                '</label>';
 
-            $(materialInputs).on('change', changeInputs);
+            for (var input of document.querySelectorAll(materialInputs)) {
+                input.addEventListener('change', changeInputs);
+            }
         }
 
         var get = function() {
             return {
-                initialValue: +$(initialValue).val(),
-                cashFlow: +$(cashFlow).val(),
-                desiredIncome: +$(desiredIncome).val(),
+                initialValue: +document.querySelector(initialValue).value,
+                cashFlow: +document.querySelector(cashFlow).value,
+                desiredIncome: +document.querySelector(desiredIncome).value,
             }
         }
 
@@ -78,7 +80,10 @@ var Milhao = (function() {
         var desiredAmount = 1000000;
 
         var futureValue = function(params) {
-            params = $.extend(defaultValues, params);
+            if (params == null) params = defaultValues;
+            if (params.initialValue == null) params.initialValue = defaultValues.initialValue;
+            if (params.cashFlow == null) params.cashFlow = defaultValues.cashFlow;
+            if (params.desiredIncome == null) params.desiredIncome = defaultValues.desiredIncome;
 
             if ((params.initialValue + params.cashFlow) === 0) return null;
 
@@ -126,4 +131,4 @@ var Milhao = (function() {
     }
 })();
 
-$(document).ready(Milhao.init);
+document.addEventListener("DOMContentLoaded", Milhao.init);
